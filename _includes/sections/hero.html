@@ -1,0 +1,21 @@
+<section id="home">
+    <div class="glow"></div>
+    <div class="code-effect"></div>
+    <div class="container">
+        <h1>Howdy! My name's <span class="accent">Damien</span></h1>
+        <p>I write code that brings ideas to life.</p>
+        <div class="social-links">
+            <a href="https://github.com/{{ site.github_username }}" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+    {% unless include.last %}
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    {% endunless %}
+</section>

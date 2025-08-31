@@ -1,0 +1,33 @@
+<section id="projects">
+    <div class="container">
+        <h2>{{ include.title | default: "Featured Projects" }}</h2>
+        <p>Check out some of my work on <a href="https://github.com/{{ site.github_username }}" class="accent">GitHub</a>!</p>
+        {% if include.projects %}
+        <div class="projects-grid">
+            {% for project in include.projects %}
+            <div class="project-card">
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+                {% if project.time %}
+                <p class="project-time"><strong>Time:</strong> {{ project.time }}</p>
+                {% endif %}
+                {% if project.technologies %}
+                <p class="project-technologies"><strong>Technologies:</strong> {{ project.technologies | join: ", " }}</p>
+                {% endif %}
+                {% if project.role %}
+                <p class="project-role"><strong>Role:</strong> {{ project.role }}</p>
+                {% endif %}
+                {% if project.link %}
+                <a href="{{ project.link }}" class="accent" target="_blank">Learn More</a>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% unless include.last %}
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    {% endunless %}
+</section>

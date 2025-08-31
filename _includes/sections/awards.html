@@ -1,0 +1,33 @@
+<section id="awards">
+    <div class="container">
+        <h2>Awards & Recognition</h2>
+        {% if include.awards %}
+        <div class="awards-grid">
+            {% for award in include.awards %}
+            <div class="award-card">
+                <div class="award-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="award-content">
+                    <h3>{{ award.title }}</h3>
+                    {% if award.event %}
+                    <p class="award-event">{{ award.event }}</p>
+                    {% endif %}
+                    {% if award.description %}
+                    <p class="award-description">{{ award.description }}</p>
+                    {% endif %}
+                    {% if award.date %}
+                    <p class="award-date">{{ award.date }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    {% unless include.last %}
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    {% endunless %}
+</section>

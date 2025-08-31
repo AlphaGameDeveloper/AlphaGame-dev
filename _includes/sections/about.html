@@ -1,0 +1,11 @@
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>{{ include.content | default: "I'm a passionate developer who loves creating elegant solutions to complex problems. When I'm not coding, you might find me exploring new technologies or contributing to open source projects." }}</p>
+    </div>
+    {% unless include.last %}
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down"></i>
+    </div>
+    {% endunless %}
+</section>

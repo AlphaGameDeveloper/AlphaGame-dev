@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    {% include head.html %}
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="noise"></div>
+    <div class="particles"></div>
+    <div class="scroll-container">
+        {{ content }}
+    </div>
+    {% include scripts.html %}
+</body>
+</html>
